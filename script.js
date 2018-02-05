@@ -2,10 +2,9 @@ $(document).ready(onReady);
 var clicks = 0;
 function onReady(){
   $('#generateButton').on('click', function(){
-    function clicker(){
-      var click = clicks++;
-    }
-    var newDiv = '<div class=goingToBeRed>';
+    $('.clickCounter').text('clicks++')
+
+    var newDiv = '<div class="changeColor">';
     newDiv += '<p class="clickCounter">Clicks: </p>';
     newDiv +='<button class=swapButton>Swap</button>';
     newDiv +='<button class=deleteButton>Delete</button>';
@@ -13,12 +12,14 @@ function onReady(){
     $('#allWork').last().append(newDiv);
     console.log('button clicked');
 
-    $('.goingToBeRed').css('color','red');
+    $('.changeColor').addClass('class=goingToBeRed');
+
     $('.swapButton').on('click', function(){
-      $('.goingToBeRed').css('color', 'yellow');
+      $('.changeColor').removeClass('class=goingToBeRed');
+      $('.changeColor').addClass('class=switchToYellow');
     })
     $('.deleteButton').on('click', function(){
-      $('.goingToBeRed').empty()
+      $('.changeColor').empty()
     })
   })
 }

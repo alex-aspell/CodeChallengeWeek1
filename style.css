@@ -1,3 +1,6 @@
-.goingToBeRed.active{
-  color: red; 
+goingToBeRed{
+  color: red;
+}
+switchToYellow{
+  color: yellow;
 }
